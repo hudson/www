@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- InstanceBegin template="/Templates/hudson-ci-site-template-singlecolumn.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Hudson Software Process</title>
+<!-- InstanceEndEditable -->
+<link href="../hudson.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+
+<body>
+<div class="containerExpanding">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="../docs/index.html">Documentation</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Source+code">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Home">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://issues.hudson-ci.org">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://java.net/projects/hudson/lists">Mailing Lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://hudson-ci.org">Home</a></li>
+      </ul>
+      <!-- end .topMenu --> 
+    </div>
+    <div id="tagline" class="undecoratedLinks"> <a href="http://hudson-ci.org"><img src="../images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></a> </div>
+    <!-- end .header --> </div>
+  <div class="singlePodExpanding newsTextLinks"> 
+    <!-- This logo positioned by CSS-->
+    <div id="hudsonStamp"><img src="../images/hudson-bust.png" alt="Hudson Logo"/><!-- InstanceBeginEditable name="rightLegend" --><!-- InstanceEndEditable --> </div>
+    <h1> <!-- InstanceBeginEditable name="pageTitle" --> Hudson Software Process <!-- InstanceEndEditable --></h1>
+    <!-- InstanceBeginEditable name="pageContent" -->
+    <p>With the goal of providing a predictable, stable and high-quality product
+      that can be contributed to by many different people in the Hudson community, we
+      are proposing the following process be followed by committers for software development. The
+      goal is to provide some structure and predictability to the process while not
+      adding a lot of extra work to the developers contributing to the project. This
+      process includes things that are very common in most open source projects. For
+      simplicity we have focused separately on the processes for the Hudson Core and
+      Plugins separately.</p>
+    <p>Note for the purposes of this process discussion Hudson Core is defined as being Core itself, the 
+      Hudson website repository (WWW) and certain Core or &quot;tier 1&quot; plugins such as Maven. These core plugins are <a href="http://wiki.hudson-ci.org/display/HUDSON/Plugins">documented in the Wiki</a>.<br/>
+      All other plugins fall into the general plugins category documented in section 2 of this document.</p>
+    <h3>Commenting on this Process</h3>
+    <p>Any comments you have relating to this process can be recorded and tracked in the <a href="http://wiki.hudson-ci.org/display/HUDSON/Hudson+Process+Document+Discussions">Hudson Wiki</a>. When commenting, please be sure to refer to the reference number of the section or paragraph that you have the comment on.<br/>Older versions of this document are archived for inspection in the <a href="http://java.net/projects/hudson/sources/www/show">WWW source control area</a>.</p>
+    <h2>1. Processes relating to Hudson Core</h2>
+    <h3>1.1 Becoming a Committer</h3>
+    <ol>
+      <li> All committers to the Hudson Core need to sign the <a href="http://oss.oracle.com/oca.pdf">OCA</a> (fka SCA).  (This is the same as it has always been)</li>
+      <li>Plugin developers do not automatically have the right to commit to Hudson Core, however, they can also graduate to becoming core committers (see #3). The current committers can vote (majority wins) to allow commit rights into the plugins repository.</li>
+      <li> Community members showing consistent patch submission for core, or check ins to one of the Hudson
+        plugins can either request permission or be nominated to become a committer on the Hudson Core. 
+        At that point, the current Hudson Core committers can vote (majority wins) on
+        whether or not to make them a committer. </li>
+    </ol>
+    <h3>1.2 Tracking Issues and New Features </h3>
+    <ol>
+      <li> All code to be
+        committed to the Hudson Core should be associated with a <a href="http://issues.hudson-ci.org/" target="_blank">JIRA</a> issue.
+        A developer should assign an existing issue to themselves or create
+        and assign a new issue.  Automatic messages from JIRA will inform
+        the community of work being undertaken.  This will provide better
+        tracking and history of issues and changes to the software. </li>
+      <li> For new functionality, a new JIRA issue should be created prior to
+        starting the work whenever possible. This will both ensure features
+        are properly tracked as well as allow others in the community to be
+        aware of the work being done and provide comments, requirements or
+        even offers to help up front.  In some cases this may not be
+        practical - such as work that is already done on an internal project
+        and contributed back to the community at a later date - but the
+        sooner a JIRA issue can be created, the better.  This will also help
+        avoid duplication of effort as well as disagreements at the time the
+        work is submitted for review. </li>
+      <li> For new functionality and major changes to the Hudson Core or APIs, a <a href="http://wiki.hudson-ci.org" target="_blank">Wiki</a> page should be created along with the JIRA issue to outline the
+        changes.  This can be linked from the JIRA issue and will be
+        communicated to the community. Again, doing this at the beginning of
+        the work will allow the user community the opportunity to discuss
+        the changes if they are likely to affect them, and provide any
+        requirements or feedback before the initial work is done. In this
+        case the developer can use a branch rather than the trunk for
+        development, review and test. </li>
+      <li>Issues and features relating to Core should be entered and documented in the Core projects within JIRA.</li>
+    </ol>
+    <h3>1.3 Code Review</h3>
+    <ol>
+      <li> All changes to Hudson Core must be approved by a Hudson Core committer (more on that in
+        section IV below). </li>
+      <li> All changes to Hudson Core should go through a code review. Developers are not constrained to using any particular tool although we will be adopting Gerrit for those wanting to use it.   If the work being checked in
+        is considered minor by the developer they can approve their own change.  For bigger changes or
+        ones that the developer would like a review, they can have another
+        Hudson Core committer review and approve the change. The decision to review or not will be left up to the
+        developer (except for cases covered in #3 below).  If people are
+        found continuously abusing this freedom they may loose their
+        committer rights.</li>
+      <li> Any new or major feature or API change to Hudson Core requires
+        a review from another committer.  Developers cannot approve their
+        own work when that work is a new feature, major change or API change. </li>
+    </ol>
+    <h3>1.4 Committing Code </h3>
+    <ol>
+      <li>Only developers with Core committer rights can commit into Hudson Core.</li>
+      <li> Merges into the Hudson Core should have the associated JIRA issue number at the
+        start of the merge message, and a short description of the work
+        done.  The JIRA issue number allows linking the merge with the JIRA
+        issue and the short description provides a quick referenced without
+        the need to go to JIRA.  This will provide better insight into users
+        as to what changes are in what version of the Hudson Core.</li>
+      <li>Commits should be grouped by issue whenever possible/sensible.</li>
+      <li>Hudson Core committers who commit patches on behalf of another community member should credit that member appropriately in the check in notes and JIRA issue.</li>
+    </ol>
+    <H3>1.5 Testing</h3>
+    <ol>
+      <li>All code to be committed to the Hudson Core should have a corresponding
+        test case checked in with the change whenever possible.  (e.g. Some
+        UI fixes might not be possible to cover with an automatic test). If a commit 
+        is already covered by an existing test then the developer should still endeavor to 
+        document which test will exercise the code.<br/>
+        In the case where no test is possible or feasible the developer should make that 
+        clear and if necessary create a separate issue for the development of a relevant 
+        test in the future. </li>
+      <li>Committers to the Hudson Core should run the necessary tests before they check
+        in and any results posted with the JIRA issue for auditing and
+        information purposes.</li>
+      <li> Code coverage will be run nightly against both core and plugins. 
+        Developers should strive for 100% test coverage in their areas.</li>
+    </ol>
+    <h2>2. Processes relating to Hudson Plugins</h2>
+    <h3>2.1 Becoming a Committer</h3>
+    <ol>
+      <li>Anyone can ask to be a committer for a new plugin on the Plugins repository. Just mail the <a href="mailto:dev@hudson.java.net">Husdon Developer list</a> to ask.</li>
+      <li>Community members seeking to become a committer on an existing plugin project need only 
+        seek the permission of the current lead for that plugin project as listed in JIRA. If a plugin project currently has no 
+        lead then commit access permission on that project will be at the discretion of the Hudson Core committers.</li>
+      <li>As stated in the preamble, in certain cases plugins are regarded as being part of Core rather than separate entities. In this case all of the rules defined for Core commits apply</li>
+    </ol>
+    <h3>2.2 Tracking Issues and New Features</h3>
+    <p>Note the current proposal is that each new plugin will have it's own project in JIRA as well as its own SCM repository.</p>
+    <ol>
+      <li>Plugin committers are encouraged to follow the pattern laid down for Hudson 
+        Core and create a JIRA issue for any code changes along with Wiki pages for discussing 
+        major changes in the plugin. However, this is not mandatory.</li>
+      <li>Plugin owners should ensure that the version of Core that a Plugin depends upon is clearly documented in the Hudson wiki.</li>
+      <li>Plugin owners/leads are responsible for defining the attributes of their JIRA projects; Sub components, default assignees etc.</li>
+      <li>Plugin owners/leads are responsible for ensuring up to date and accurate documentation for their components in the Hudson wiki</li>
+    </ol>
+    <h3>2.3 Code Review</h3>
+    <ol>
+      <li>Code review is not required for plugins unless that process is agreed upon by plugins that have several contributors. However, again we encourage good practice and welcome peer review between plugin writers. Crucible can be used for this task.</li>
+    </ol>
+    <h3>2.4 Committing Code </h3>
+    <ol>
+      <li>Only developers with committer rights on a specific plugin can commit into that plugin's repository,</li>
+      <li>Commits should be grouped by issue whenever possible/sensible.</li>
+      <li>Commits should be linked with the associated plugin JIRA issue for traceability.</li>
+    </ol>
+    <h3>2.5 Testing</h3>
+    <p>Note having good tests is an essential part of being a good Hudson plugin. If a plugin is going to be promoted to Tier 1 or 2 then tests are an essential part of the evaluation criteria for that.</p>
+    <ol>
+      <li>Plugin writers are encouraged to provide tests along with the plugin code</li>
+      <li>Plugin writers are encouraged to run the necessary tests before they check in and any results posted with the JIRA issue for auditing and information purposes.</li>
+      <li>Code coverage will be run nightly against both core and plugins. Plugin developers should strive for 100% test coverage in their areas.</li>
+    </ol>
+	<p><em>Comments or feedback? Head over to the <a href="http://wiki.hudson-ci.org/display/HUDSON/Hudson+Process+Document+Discussions">wiki</a>.</em></p>
+    <p id="versionControl">$LastChangedDate: 2011-03-14 18:15:29 +0000 (Mon, 14 Mar 2011) $</p>
+    <!-- InstanceEndEditable --> 
+    <!-- end .singlePodExpanding --></div>
+  <div id="footer">
+    <ul id="footerLinks">
+      <li class="footerLinksItemFirst"><a href="http://java-net.dev.java.net/feedback.html">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="../images/oracle-logo.gif" alt="Site Sponsored by Oracle"/> 
+    <!-- end .footer --></div>
+  <!-- end .containerExpanding --></div>
+</body>
+<!-- InstanceEnd -->
+</html>

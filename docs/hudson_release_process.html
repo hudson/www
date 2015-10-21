@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- InstanceBegin template="/Templates/hudson-ci-site-template-singlecolumn.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Hudson Core Release and Development Process</title>
+<!-- InstanceEndEditable -->
+<link href="../hudson.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script> 
+</head>
+
+<body>
+<div class="containerExpanding">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="index.html">Documentation</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Source+code">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Home">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://issues.hudson-ci.org">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://java.net/projects/hudson/lists">Mailing Lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://hudson-ci.org">Home</a></li>
+      </ul>
+      <!-- end .topMenu --> 
+    </div>
+    <div id="tagline" class="undecoratedLinks"> <a href="http://hudson-ci.org"><img src="../images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></a> </div>
+    <!-- end .header --> </div>
+  <div class="singlePodExpanding newsTextLinks"> 
+    <!-- This logo positioned by CSS-->
+    <div id="hudsonStamp"><img src="../images/hudson-bust.png" alt="Hudson Logo"/><!-- InstanceBeginEditable name="rightLegend" --><!-- InstanceEndEditable --> </div>
+    <h1>
+	<!-- InstanceBeginEditable name="pageTitle" -->Hudson Core Release and Development Processes<br>
+      <!-- InstanceEndEditable --></h1>
+	<!-- InstanceBeginEditable name="pageContent" -->
+    <h2>Index</h2>
+    <ol>
+      <li><a href="#Intro">Introduction</a></li>
+      <li><a href="#ReleaseCycle">Release Cycle</a></li>
+      <li><a href="#ReleasePlanning">Release Planning</a></li>
+      <li><a href="#QA">Quality Assurance Testing </a></li>
+      <li><a href="#SCM">Working with Hudson Source</a></li>
+      <li><a href="#WWW">Hudson Website Management</a></li>
+    </ol>
+    <h2><a name="Intro"></a>1. Introduction</h2>
+    <p>This document outlines various processes around the day to day and release to release development of Hudson. It does not cover the actual process of becoming a committer on Hudson (this is covered by the <a href="hudson_software_process.html">Hudson Software Process</a>) or the mechanics of building Hudson from source which is covered in the <a href="http://wiki.hudson-ci.org/display/HUDSON/Building+Hudson">Wiki</a>. Furthermore this document only covers the processes relating to the Hudson core and does not apply to non-core plugins which may choose to adopt the same process if they wish or may use some totally different process that suits the style of the relevant contributors.</p>
+    <p>The development processes assume that the following logical roles exist within the Hudson community universe, an individual may hold one or several of these roles:</p>
+    <ul>
+      <li>Developer - a developer with committer rights on Hudson Core</li>
+      <li>QA Engineer - self evident</li>
+      <li>WebSite Developer - a developer with commit rights on the WWW repository</li>
+      <li>Community Member - a user of Hudson who may at some point wish to contribute patches but who is not explicitly a core committer.</li>
+    </ul>
+    <h3>Commenting on this Process</h3>
+    <p>Any comments you have relating to this process can be recorded and tracked in the <a href="http://wiki.hudson-ci.org/display/HUDSON/Hudson+Process+Document+Discussions">Hudson Wiki</a>. When commenting, please be sure to refer to the reference number of the section or paragraph that you have the comment on.<br/>
+      Older versions of this document are archived for inspection in the <a href="http://java.net/projects/hudson/sources/www/show">WWW source control area</a></p>
+    <h2><a name="ReleaseCycle"></a>2. Release Cycle</h2>
+    <p>The proposed Hudson release plan is that we should aim to release a new version of Hudson on a regular cycle of 5 weeks. This schedule will consist of a 4 week development sprint followed by a week of feature QA followed by a further week of integration and install QA.</p>
+    <p>We have attempted to capture the flow of this process in the following diagram, as you can see the individual iterations overlap by 1 week to provide the 5 week cycle.</p>
+    <figure id="releaseProcessFigure"><img src="HudsonDevelopmentFlowV1.png" width="960" alt="Visio diagram of Hudson Release Process">
+      <figcaption>Figure 1: The Hudson Release Process</figcaption>
+    </figure>
+    <p>Much of what is shown in this release process will be automated in the long term, however at this time activities such as changelog updates and staging of downloads are manual tasks to be handled by the various roles as defined within the Hudson community.</p>
+    <h2><a name="ReleasePlanning"></a>3. Release Planning</h2>
+    <p>Hudson release planning occurs at the start of each new release phase  and runs parallel to the BugFixing phase of the previous release.   During that week we will consider all issues in Jira based on their  priority and vote count.  In scope, this will include both bug fixes and  enhancements. Once candidate issues are identified the following will happen: </p>
+    <ol>
+      <li>The JIRA <em>Fix Version/s</em> field will be set for the issue to that release. This adds the issue to the backlog for that release.   </li>
+      <li>As developers become available  or identify items they wish to work on, they will assign themselves as  owners.  </li>
+      <li>We  will have a checkpoint during the 2 week mark of the cycle for the release to gauge the size of the  backlog to determine if we’re on track or if we need to add/remove  backlog items.  </li>
+      <li>At the final 4 week development mark, we will push any  uncompleted items to the next release automatically.  If users want  specific issues completed, they are encouraged to set the priority and  vote for those issues to ensure they get the proper attention. </li>
+    </ol>
+    <h2><a name="QA"></a>4. QA Testing</h2>
+    <p>The proposed cycle includes a  provision for various types of testing:</p>
+    <p><br/>
+      Prior to every check in (responsibility of the individual developer):</p>
+    <ol>
+      <li>Unit Testing</li>
+    </ol>
+    <p>Nightly (automated):</p>
+    <ol start="2">
+      <li>Unit Testing</li>
+      <li>Code Coverage</li>
+    </ol>
+    <p>Release Testing (Automated / QA initiated):</p>
+    <ol start="4">
+      <li>Upgrade Tests</li>
+      <li>Regression tests</li>
+      <li>Functional tests</li>
+      <li>O/S Install Testing</li>
+    </ol>
+    <p>To test and validate Hudson, we will start to classify the plug-ins using a tiered system.  This will consist of 3 levels of plug-ins and The qualification of plug-in falling into this level is up to the Hudson committee and strictly governed.  The definition of the tiers are:</p>
+    <ol>
+      <li><strong>Tier 1</strong>: These plug-ins are critical to the functionality of Hudson.  They will be verified to work on each release of Hudson by QA.</li>
+      <li><strong>Tier 2</strong>: These plug-ins represent the top 90% (approximately) of popular Hudson plug-ins.  They will have some level of testing to ensure they work and can be installed but are not necessarily validated on every Hudson build.  They represent the most popular and useful plug-ins.<br/>
+        To qualify at Tier 2 a plugin must:
+        <ol type="i">
+          <li>Have an owner identified</li>
+          <li>Have some level of tests defined, preferably automated</li>
+          <li>Deemed important and one of the heavily used components by the Hudson community</li>
+        </ol>
+      </li>
+      <li><strong>Tier 3</strong>: All other plug-ins default to tier 3.  These are not actively tested by Hudson QA though plug-in owners are encouraged to provide automated test cases that can be run for each build to Hudson infrastructure to be run.</li>
+    </ol>
+    <p>The full list of plug-ins and their associated tier level is defined <a href="http://wiki.hudson-ci.org/display/HUDSON/Plugins">here</a>.
+    </p>
+    <h2><a name="SCM"></a>5. Working with Hudson Source</h2>
+    <p>The process here assumes that the developer is already a Husdon Core committer (as discussed in the <a href="hudson_software_process.html">Software Process</a>) and has already signed the OCA. </p>
+    <p>The main code repository for Hudson Core is at GitHub (<a href="https://github.com/hudson">https://github.com/hudson</a>). When a developer wants to work on the source code either to implement a new feature or create a patch for an existing issue they should follow the following process:</p>
+    <ol>
+      <li>Create a  GIT Fork  of the repository using the the GIT Clone command.</li>
+      <li>Work on this local fork committing as often as required.</li>
+      <li>Before merging back into the Hudson Core you should pull all changes from Hudson Core into your fork using the GIT pull command and resolve all of the merge conflicts at this stage.</li>
+      <li>Finally merge your fork back into Hudson Core using GIT push</li>
+      <li>Throw away your private fork </li>
+    </ol>
+    <h2><a name="WWW"></a>6. Hudson Website Management</h2>
+    <p>Unlike Hudson core, the hudson website artifacts are managed in subversion for ease of interoperability with content management tools such as Dreamweaver. During normal operation the website will operate on a continuous release cycle with changes made directly on the trunk and published immediately (or at least nightly). The one exception to this will be in Week 6 of the main development release cycle when we will branch the website in order to prepare the correct links for the new downloads and change logs.</p>
+    <p>Upon successfully release this release branch will be merged back into the mainline. </p>
+    <p><em>Comments or feedback? Head over to the <a href="http://wiki.hudson-ci.org/display/HUDSON/Hudson+Process+Document+Discussions">wiki</a>.</em></p>
+    <p id="versionControl">$LastChangedDate: 2011-03-14 18:15:29 +0000 (Mon, 14 Mar 2011) $</p>
+    <!-- InstanceEndEditable --> 
+    <!-- end .singlePodExpanding --></div>
+  <div id="footer">
+    <ul id="footerLinks">
+      <li class="footerLinksItemFirst"><a href="http://java-net.dev.java.net/feedback.html">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="../images/oracle-logo.gif" alt="Site Sponsored by Oracle"/> 
+    <!-- end .footer --></div>
+  <!-- end .containerExpanding --></div>
+</body>
+<!-- InstanceEnd --></html>

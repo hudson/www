@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hudson Continuous Integration - Documentation</title>
+<link href="../hudson.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+<body>
+<div class="containerExpanding">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/documentation">Documentation</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/development">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Plugins">Plugins</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Hudson&component=">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/contacts_and_help">Mailing Lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://hudson-ci.org">Home</a></li>			
+		
+      </ul>
+      <!-- end .horizonalMenu --> 
+    </div>
+    <div id="tagline" class="undecoratedLinks"> <a href="http://hudson-ci.org"><img src="../images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></a> </div>
+    <!-- end .header --> 
+  </div>
+  <div id="contentArea">
+    <div class="singlePodExpanding newsTextLinks">
+        <!-- This logo positioned by CSS-->
+      <div id="hudsonStamp"><img src="../images/hudson-bust.png" alt="Hudson Logo"/></div>
+	  <h1>Documentation</h1>
+      <h2>The Hudson Book (Under Development)</h2>
+      <p>A complete and free guide to Hudson from the development team. This is still a work in progress, so keep coming back for the latest and greatest:</p>
+	  <ul>
+      <li><a href="http://hudson-ci.org/hudson/job/hudson-book/lastSuccessfulBuild/artifact/hudson-pdf/target/hudson-complete.pdf">The Hudson Book </a><img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"></li></ul>
+      <h2>Hudson Architecture Documents</h2>
+      <ul>
+        <li><a href="HudsonArch-Web.pdf">Hudson Web/REST Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"> </li>
+        <li><a href="HudsonArch-View.pdf">Hudson View 
+          Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"> </li>
+        <li><a href="HudsonArch-Execution.pdf">Hudson Execution 
+          Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"> </li>
+        <li><a href="HudsonArch-Remoting.pdf">Hudson Remote 
+          Execution Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"> </li>
+        <li><a href="HudsonArch-Security.pdf">Hudson Security 
+          Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"> </li>
+        <li><a href="HudsonArch-Plugin.pdf">Hudson Plugin 
+          Architecture</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"></li>
+      </ul>
+      <h2>User Documents</h2>
+      <ul>
+        <li><a href="HudsonIntro.pdf">Hudson Introduction</a> <img src="../images/pdficon_small.gif" width="17" height="17" alt="PDF reader"></li>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Meet+Hudson">What is Hudson and what are its features?</a></li>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Installing+Hudson">How do I install Hudson</a>?</li>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Administering+Hudson">How do I administrate Hudson?</a></li>
+		<li><a href="CON4204_Hudson_best_practice.pdf">Developing Best Practice with Hudson paper from JavaOne 2012</a></li>
+      </ul>
+      <p><a href="http://wiki.hudson-ci.org/display/HUDSON/Use+Hudson">More user documents...</a></p>
+      <h2>Developer Documents</h2>
+      <ul>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Plugin+tutorial">How do I write a plugin for Hudson?</a></li>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Extension+points">What are Extension Points?</a></li>
+        <li><a href="http://wiki.hudson-ci.org/display/HUDSON/Basic+guide+to+Jelly+usage+in+Hudson">How do I use jelly in my plugin?</a></li>
+      </ul>
+      <p><a href="http://wiki.hudson-ci.org/display/HUDSON/Extend+Hudson">More developer documents ..</a><a href="http://wiki.hudson-ci.org/display/HUDSON/Use+Hudson"></a></p>
+      <h2>Process Documents</h2>
+      <ul>
+        <li><a href="hudson_software_process.html">Software Process - Duties for Committers</a></li>
+        <li><a href="hudson_release_process.html">Release and Development Processes for Hudson Core</a></li>
+        <li><a href="HudsonTM-License-v1.pdf">Hudson Trademark License</a></li>
+      </ul>
+	  <p id="versionControl">$LastChangedDate: 2012-10-16 18:11:32 +0100 (Tue, 16 Oct 2012) $</p>   
+    </div>
+  </div>
+  <div id="footer">
+    <ul id="footerLinks">
+      <li class="footerLinksItemFirst"><a href="http://java-net.dev.java.net/feedback.html">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="../images/oracle-logo.gif" alt="Site Sponsored by Oracle"/> 
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

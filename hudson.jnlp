@@ -1,0 +1,26 @@
+<!-- 
+ Launcher for the Test Drive version of Hudson
+ $Revision: 14 $ 
+ $LastChangedBy: duncanmills $
+ $LastChangedDate: 2011-03-08 16:27:23 +0000 (Tue, 08 Mar 2011) $
+-->
+<jnlp spec="1.0+">
+
+  <information>
+    <title>Hudson</title>
+    <vendor>Hudson Continuous Integration Project</vendor>
+    <homepage href="http://hudson-ci.org/"/>
+    <offline-allowed/>
+  </information>
+
+  <security>
+    <all-permissions/>
+  </security>
+
+  <resources>
+    <j2se version="1.5+"/>
+	<jar="http://www.hudson-ci.org/downloads/war/latest/hudson.war"/>
+  </resources>
+
+  <application-desc main-class="JNLPMain" />
+</jnlp>

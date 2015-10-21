@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hudson Continuous Integration</title>
+<link rel="alternate" title="Hudson Twitter Feed" href="http://twitter.com/statuses/user_timeline/245535216.rss" type="application/rss+xml" />
+<link href="hudson.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/icon" href="favicon.ico"/>
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<script language="javascript">
+  function podHighlight(whichPod,state){
+	var thisImage;
+	
+	if (state == 'on') {
+		thisImage = 'images/hudson-bust.png';
+		}
+	else {
+		thisImage = 'images/hudson-bust-greyed.png'	
+	}
+
+	if (whichPod == 'meetMe')
+	{
+		document.getElementById(whichPod).src = thisImage;
+
+	}
+    else {	 
+	    document.getElementById(whichPod).style.backgroundImage = 'url('+ thisImage + ')';
+	}
+  } 
+</script>
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+<body>
+<div class="container">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/documentation">Docs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/development">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Plugins">Plugins</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Hudson&component=">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.eclipse.org/Hudson-ci/contacts_and_help">Mail lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://www.eclipse.org/forums/index.php/f/229/">Forum</a></li>
+      </ul>
+      <!-- end .horizonalMenu -->
+    </div>
+    <div id="tagline"><img src="images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></div>
+    <!-- end .header -->
+  </div>
+  <div id="contentArea">
+    <!--
+      Due to behavior in IE we have to repeat the links and JS calls around both the title and the image otherwise the rollover and drilldown does not work as required 
+      -->
+    <div class="topContent topLeftPod"> <a href="http://wiki.eclipse.org/Hudson-ci/Meet_Hudson"  
+	     onMouseOver="podHighlight('meetMe','on');" 
+		 onMouseOut="podHighlight('meetMe','off');">
+      <h2>Meet Hudson.</h2>
+      </a>
+      <p class="topContentDesc"> Find out what Hudson is and get started.</p>
+      <div class="podButtonArea meetHudson"> <a href="http://wiki.eclipse.org/Hudson-ci/Meet_Hudson" 
+		   onMouseOver="podHighlight('meetMe','on');" 
+		   onMouseOut="podHighlight('meetMe','off');"> <img id="meetMe" src="images/hudson-bust-greyed.png" alt="Hudson Logo"/> </a> </div>
+    </div>
+    <!-- End Meet Hudson (Left Pod) -->
+    <!-- Start Use Hudson (Center 1) -->
+    <div  class="topContent topCenterPod"> <a href="http://wiki.eclipse.org/Hudson-ci/Use_Hudson" 
+	     onMouseOver="podHighlight('usehudson','on');" 
+		 onMouseOut="podHighlight('usehudson','off');">
+      <h2>Use Hudson</h2>
+      </a>
+      <p class="topContentDesc">See how to get more out of Hudson.</p>
+      <div id="usehudson" class="podButtonArea hudsonWatermark"> <a href="http://wiki.eclipse.org/Hudson-ci/Use_Hudson" 
+		   onMouseOver="podHighlight('usehudson','on');" 
+		   onMouseOut="podHighlight('usehudson','off');">
+        <div> <img src="images/book.png" alt="Book or Manual Graphic"> </div>
+        </a> </div>
+    </div>
+    <!-- End Use Hudson (Center 1) -->
+    <!-- Start Extend Hudson (Center 2) -->
+    <div  class="topContent topCenterPod"
+		 onMouseOver="podHighlight('extendhudson','on');" 
+		 onMouseOut="podHighlight('extendhudson','off');"> <a href="http://wiki.hudson-ci.org/display/HUDSON/Extend+Hudson" 
+	     onMouseOver="podHighlight('extendhudson','on');" 
+		 onMouseOut="podHighlight('extendhudson','off');">
+      <h2>Extend Hudson</h2>
+      </a>
+      <p class="topContentDesc">Learn how to build Hudson or extend Hudson by writing plugins.</p>
+      <div class="podButtonArea hudsonWatermark" id="extendhudson"> <a href="http://wiki.hudson-ci.org/display/HUDSON/Extend+Hudson" 
+	       onMouseOver="podHighlight('extendhudson','on');" 
+		   onMouseOut="podHighlight('extendhudson','off');">
+        <div> <img  src="images/tools.png" alt="Graphic of some tools"/> </div>
+        </a> </div>
+    </div>
+    <!-- End Extend Hudson (Center 2) -->
+    <!-- Start News Pod -->
+    <div class="topContent topRightPod newsTextLinks">
+      <H3><img src="images/circle-headline.png"/> News</H3>
+      <div class="scrollableArea">
+        <!-- News Items go here 
+             The first Item should be marked with the firstNewsItem class and subsequent items with the subsequentNewsItem class 
+             The scrollbar kicks in automatically if the content grows too long for the display area
+        -->
+        <h4 class="firstNewsItem undecoratedLinks">09/30/2015 - Hudson 3.3.1 Patch Set Released</h3>
+        <p>Hudson 3.3.1 is now available from the Hudson <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page. This is a patch set release for 3.3.0 and should be of particular interest to Active Directory users blocked by Bug 474329. For more information see the <a href="https://www.eclipse.org/hudson/changelog.php#3_3_1">changelog</a> and the download page.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">07/12/2015 - Hudson 3.3.0 </h3>
+        <p>Hudson 3.3.0 is now available from the Hudson <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page. Note that this release mandates the use of Java 7 or above to run Hudson. For more information see the <a href="https://www.eclipse.org/hudson/changelog.php#3_3_0">changelog</a> and the download page.</p>    
+        <h4 class="subsequentNewsItem undecoratedLinks">01/30/2015 - Hudson 3.2.2 is Available</h4>
+        <p>Hudson 3.2.2 is now available for production use from the Hudson <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page. This patch set release addresses a range of issues in the 3.2 release including some security vulnerabilities (see the <a href="https://www.eclipse.org/hudson/changelog.php#3_2_2">changelog</a> for details). We recommend that users of 3.2.0 (and earlier versions) upgrade to this release.</p>  
+        <h4 class="subsequentNewsItem undecoratedLinks">9/27/2014 - Hudson 3.2.1 is Available</h4>
+        <p>Hudson 3.2.1 is now available for production use from the Hudson <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page. This patch set release addresses a small number of high priority bugs brought to light by the Hudson 3.2.0 upgrade. We recommend that users of 3.2.0 (and earlier versions) upgrade to this release.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">7/14/2014 - Hudson 3.2.0 Final is Available</h4>
+        <p>Hudson 3.2.0 is now available for production use from the <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page. This milestone encapsulates the upgrade of the Spring libraries to Spring 3 and upgrades the capabilities of the Team support to full multi-tenancy with Job Group View and Slave isolation.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">02/13/2014 - Hudson 3.1.2 Patchset Available for Download</h4>
+        <p>The Hudson 3.1.2 bugfix release now available for production use from the <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page for the WAR file version and this page for the OS Specific distributions. The bugs addressed in this release and the preceding 3.1.1 patchset are listed in the <a href="http://www.eclipse.org/hudson/changelog.php">change log</a>.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">02/03/2014 - Hudson 3.1.2 Early Access Available for Download</h4>
+        <p>Hudson 3.1.2 is available for early testing. This release is a small bugfix release addressing some high priority issues encountered in 3.1.1. The release candidate can be obtained from the <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page.</p> 
+        <h4 class="subsequentNewsItem undecoratedLinks">12/24/2013 - Hudson 3.1.1 Available for Download</h4>
+        <p>The Hudson Team are pleased to announce the availability of the 3.1.1 release. This bugfix only release is now available for download from the <a href="http://www.eclipse.org/hudson/download.php">downloads</a> page.</p> 
+        <h4 class="subsequentNewsItem undecoratedLinks">12/13/2013 - Hudson 3 Essentials Published</h4>
+        <p>We're please to pass on the news that yet another Hudson book has just been published. Lloyd Meinholz has just let us know that his <a href="http://www.packtpub.com/hudson-3-essentials/book" target="_blank">Hudson 3 Essentials</a> fast paced book which covers both Hudson 3 and 3.1 has just made it to the newstand.  Congratulations Lloyd!</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">09/30/2013 - Hudson Continuous Integration in Practice Book, Now Available</h4>
+        <p>Hudson project lead Winston Prakash, along with established author and JSF Spec Lead Ed Burns, have just completed their collaboration on a great guide to using and extending Hudson.<br/><img src=" http://covers.mhedu.com/Jpeg_140-wide/0071804285.jpeg" alt="Book Cover Image"><br/>The book is available now and you can read more <a href="http://www.mcgraw-hill.co.uk/html/0071804285.html">here</a>.</p>  
+        <h4 class="subsequentNewsItem undecoratedLinks">09/20/2013 - Hudson 3.1.0 is Production</h4>
+        <p>The Hudson project team is proud to announce the availability of <a href="http://eclipse.org/downloads/download.php?file=/hudson/war/hudson-3.1.0.war">Hudson 3.1.0</a>. This new release adds the new <a href="http://hudsoncentral.wordpress.com/2013/09/02/using-hudson-teams-part-1-the-basics/">team support</a> feature and provides significant improvements in scalability.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">03/22/2013 - Hudson 3.0.1 Released</h4>
+        <p>The 3.0.1 patchset release of Hudson is now available. This is a minor release, mainly consisting of bugfixes for the Hudson 3.0.0 release. Details of the fixes and minor new features can be found on the <a href="http://www.eclipse.org/hudson/changelog.php">ChangeLog</a> </p>
+        <!--h4 class="firstNewsItem undecoratedLinks">02/22/2013 - Next Community Meeting</h4>
+        <p>The next Hudson community meeting will take place on Monday 25th February @ 5pm UTC / 9am PST. Call is open to all.  Details can be found <a href="http://wiki.eclipse.org/Hudson-ci/community_meetings/February252013">here</a> </p-->
+		<h4 class="subsequentNewsItem undecoratedLinks">12/12/2012 - Hudson 3.0.0 Released</h4>
+        <p>The first production release of Hudson under the Eclipse Foundation umbrella is now available!</p> 
+		<h4 class="subsequentNewsItem undecoratedLinks">12/12/2012 - Hudson has Graduated!</h4>
+        <p>Great news, Hudson has now moved out of incubation at Eclipse and the release of Hudson 3.0 is approved.</p> 
+		<h4 class="subsequentNewsItem undecoratedLinks">10/23/2012 - New Hudson iPhone App</h4>
+        <p>A new iPhone application for monitoring your Hudson installations, the <a href="https://itunes.apple.com/us/app/oracle-hudson-mobile-monitor/id540164061?mt=8">Hudson Mobile Monitor</a>, is now available from iTunes (and coming to Android soon!). Read more at the <a href="http://hudsoncentral.wordpress.com/2012/10/23/new-hudson-mobile-app-now-available-on-itunes/">Hudson Blog</a>.</p> 		
+        <h4 class="subsequentNewsItem undecoratedLinks">10/16/2012 - Hudson Best Practices paper from JavaOne</h4>
+        <p>Winston and Duncans Developing Best Practice with Hudson paper is now available for viewing <a href="/docs/CON4204_Hudson_best_practice.pdf">here</a>.</p>
+        <h4 class="subsequentNewsItem undecoratedLinks">09/24/2012 - Logging Issues for Hudson</h4>
+        <p>In accordance with the Hudson Community meeting of September 24th the old issues.hudson-ci.org repository is being retired. All new issues in Hudson core should be logged in the <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Hudson&format=guided">Eclipse Bugzilla</a> system against <em>technology.hudson</em>. Issues with plugins should be logged in the respective GITHub projects: (<a href="https://github.com/hudson-plugins">Hudson 2.n Plugins</a> / <a href="https://github.com/hudson3-plugins">Hudson 3+ Plugins</a>).</p>
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="http://www.eclipse.org/hudson/download.php">Hudson 3.0.0 Release Candidate Now Available</a></h4>
+		<p>The release candidate for Hudson 3.0 from Eclipse is now available for download and evaluation from the <a href="http://www.eclipse.org/hudson/download.php">Eclipse Download page</a>. This version previews the production Hudson 3.0 release, which, barring show-stopper problems should appear within the next couple of weeks..</p>
+		<p><em>Note that this release candidate is intended for evaluation and testing only and should not be used in production.</em></p>
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="http://www.eclipse.org/hudson/download.php">Hudson 3.0.0 Milestone 4 Released</a></h4>
+		<p>The fourth and final milestone (alpha) release of Hudson from Eclipse is now available for download and evaluation from the <a href="http://www.eclipse.org/hudson/download.php">Eclipse Download page</a>. This version previews the Hudson 3.0 release candidate (RC1) and provides the final stable library versions and more improvements to the management of plugins including a re-worked plugin management center.</p>
+		<p><em>Note that this milestone version is intended for evaluation only and should not be used in production.</em></p>
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="http://java.net/projects/hudson/downloads/download/war/hudson-2.2.1.war">Hudson 2.2.1 Released</a></h4>
+		<p>We're happy to announce the immediate availability of Hudson 2.2.1 production. This is primarily a bugfix release. See the <a href="changelog.html">changelog</a> for more information.</p>	
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="">Hardware Migration</a></h4>
+        <p>It's been a long road but Hudson is now bedding in on its new hardware configuration.  This will provide a more stable environment and more power for the Hudson-on-Hudson plugins build.</p>		
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="http://www.eclipse.org/hudson/download.php">Hudson 3.0.0 Milestone 0 Released</a></h4>
+        <p>Great news! The first milestone (alpha) release of Hudson from Eclipse is now available for download and evaluation. Head on over to the <a href="http://www.eclipse.org/hudson/download.php">Eclipse Download page</a> to grab it and play. <em>Note that this milestone version is intended for evaluation only and should not be used in production.</em></p>			
+		<h4 class="subsequentNewsItem undecoratedLinks"><a href="docs/news.html#2.2.0">Hudson 2.2.0 Released</a></h4>
+        <p>We're happy to announce the availablity of Hudson 2.2.0 production - Now with Cascading projects! It can be downloaded from <a href="http://java.net/projects/hudson/downloads/download/war/hudson-2.2.0.war">here</a>. click here for <a href="docs/news.html#2.2.0">more...</a><strong>Note:</strong> You must backup your job configurations before upgrading to this release </p>		
+	  </div>
+    </div>
+    <!-- End News Pod -->
+    <div id="centerBar">
+      <H3><img src="images/feed-icon.png" alt="RSS Feeds"/> RSS: </H3>
+      <p><a href="http://twitter.com/statuses/user_timeline/245535216.rss">Twitter Feed</a> ● <a href="http://www.eclipse.org/forums/feed.php?mode=m&l=1&basic=1&frm=229&n=10">User Forum</a></p>
+    </div>
+    <div class="bottomContent bottomLeftPod">
+      <h3><img src="images/circle-headline.png"/> Download Hudson .war</h3>
+      <p><a href="http://eclipse.org/downloads/download.php?file=/hudson/war/hudson-3.3.1.war">Latest production Release WAR file: <span class="popText">3.3.1</span></a><br/><br/>
+	     <a href="http://www.eclipse.org/hudson/changelog.php">Change Log</a> ● <a href="downloads/war/">Earlier Releases</a></p>
+	  <!--hr/>
+	  <p><a href="http://eclipse.org/downloads/download.php?file=/hudson/war/hudson-3.2.0-RC1.war">For early adopters:<br/><span class="popText">3.2.0 Release Candidate</span></a></p-->
+	  <!--hr/-->
+      <!--p><a href="http://java.net/projects/hudson/downloads/download/war/hudson-3.1.0-bundled.war">Plugin Bundle Release: <span class="popText">3.1.0</span></a><br/><br/>
+  	     <a href="http://wiki.eclipse.org/Hudson-ci/development/releaseartifacts#Plugin_Bundle_WAR_Distribution">About this distribution</a> </p-->
+    </div>
+    <div class="bottomContent bottomCenterPod">
+      <h3><img src="images/circle-headline.png"/> Download Native Pkg</h3>
+	  <h5>3.3.1 Production Version:</h5>
+      <ul id="osList">
+        <li id="osUbuntu"><a href="http://hudson-ci.org/downloads/debian/hudson_3.3.1_all.deb">Ubuntu / Debian</a></li>
+        <li id="osOEL"><a href="http://hudson-ci.org/downloads/redhat/hudson-3.3.1-1.1.noarch.rpm">Oracle Linux</a></li>
+        <li id="osRedhat"><a href="http://hudson-ci.org/downloads/redhat/hudson-3.3.1-1.1.noarch.rpm">Redhat / Fedora / CentOS</a></li>
+        <li id="osSuse"><a href="http://hudson-ci.org/downloads/opensuse/hudson-3.3.1-1.1.noarch.rpm">openSUSE</a></li>
+      </ul>
+      <h5><a href="https://itunes.apple.com/us/app/oracle-hudson-mobile-monitor/id540164061?mt=8">Hudson iPhone App</a> </h5>
+    </div>
+    <div class="bottomContent bottomCenterPod">
+    <h3><img src="images/circle-headline.png"/> More Information</h3>
+    <p><a href="http://wiki.eclipse.org/Hudson-ci/Installing_Hudson">Want to Install Hudson?<br>
+      <span class="popText">Here's how&gt;&gt;</span></a></p>
+	<h5>License</h5>
+	<p>Hudson is currently licensed under the  <a href="http://www.eclipse.org/legal/epl/notice.php" target="_blank">Eclipse EPL license</a>. Versions of Hudson prior to 3.n and plugins (unless otherwise stated) are licensed under the <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT license</a> </p>
+    </div>
+    <div class="bottomContent bottomRightPod">
+      <h3><img src="images/circle-headline.png"/> About the Project </h3>
+	  <p>Hudson is hosted partly as an <a href="http://www.eclipse.org/hudson/" target="_blank">Eclipse Foundation project</a> and partly as a java.net project.</p>
+      <p>For more information about this head on over to the <a href="http://wiki.eclipse.org/Hudson-ci/eclipse_migration/infrastructure" target="_blank">The Hudson Universe Page</a>. </p>
+      <p>&nbsp;</p>
+      <h4>Keeping in Touch</h4>
+      <p><br/><a href="https://twitter.com/hudsonci" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @hudsonci</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+      <p>Hang out on the <a href="http://www.eclipse.org/forums/index.php?t=thread&frm_id=229">Hudson Forum @ Eclipse</a></p>
+      <p><a href="http://wiki.eclipse.org/Hudson-ci/contacts_and_help"><span class="popText">More &gt;&gt;</span></a></p>
+    </div>
+    <div id="dukeAward"><a href="http://java.sun.com/javaone/sf/2008/articles/2008dukeschoiceawards.jsp"> <img src="images/duke-award.png" alt="Duke Award Logo"/> </a></div>
+  </div>
+  <div id="footer">
+    <ul id="footerLinks">
+       <li class="footerLinksItemFirst"><a href="sponsors.html">Project Sponsors</a></li>   
+      <li class="footerLinksItem"><a href="mailto:hudson-dev@eclipse.org">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="images/oracle-logo.gif" alt="Site Sponsored by Oracle"/>
+    <!-- end .footer -->
+  </div>
+  <!-- end .container -->
+</div>
+</body>
+</html>

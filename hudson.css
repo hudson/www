@@ -1,0 +1,723 @@
+@charset "UTF-8";
+
+/* New Stylesheet for the Hudson-ci site
+   $Revision: 55 $  
+   $LastChangedBy: duncanmills $
+   $LastChangedDate: 2011-09-30 20:10:08 +0100 (Fri, 30 Sep 2011) $
+ */
+body {
+	height: 100%;
+	font-family:Arial, Helvetica, sans-serif;
+	background-image:url(images/background.png);
+	background-repeat:repeat-x;
+	background-color:#fff1e1;
+	margin: 0;
+	padding: 0;
+	color: #FFFDED;
+	border-style:none;
+}
+
+/* Global overrides */
+p, figcaption, td{
+	font-size:11pt;
+	color:#0e384c;
+	padding:0;
+}
+
+figcaption {
+	font-style: oblique;
+}
+
+h1, h2, h3 {
+	color:#ff3600;
+	font-weight:bold;
+}
+
+h1 {
+	font-size:22pt;
+}
+ 
+
+h2 {
+	font-size:20pt;
+
+}
+
+h3 {
+    font-size:12pt;
+}
+
+h4 {
+	color:#0E384C;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13pt;
+}
+
+h5 {
+    font-size:11pt;
+	font-weight:normal;
+	color:#0e384c;
+	margin:0px;
+	padding:0px;
+	text-decoration:underline;
+}
+
+a img { 
+	border: none;
+}
+
+
+a:link {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#0e384c;	
+	text-decoration:none;
+	border-bottom:none;
+}
+
+a:hover, a:active, a:focus { 
+	border-bottom:dotted;
+	border-bottom-width:1px;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+
+/* This fixed width container surrounds all other divs and sizes the site - assumes a minimum of 1024x768 */
+.container {
+	width: 1000px;
+	height:650px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/*Container Version for long pages such as process document */
+.containerExpanding {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+
+#tagline {
+	width: 155px;
+	margin: 20px 0px 20px 10px;
+	padding: 0px 0px 0px 0px;
+}
+
+#release2_0_tag {
+    position:relative;
+	z-index:2;
+	float:right;
+	margin-top:-90px;
+	margin-right:-35px;
+}
+
+#topMenu {
+	float: right;
+	margin-left: 8px;
+	width: 825px;
+	vertical-align:middle;
+	text-align:right;
+}
+#topMenu ul {
+	
+	padding: 0px;
+}
+.horizontalTopMenuItem {
+	text-transform: uppercase;
+	font-weight:bold;
+	font-size:11pt;
+	font-family:Verdana, Geneva, sans-serif;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 40px;
+	float: right;
+	list-style-image:url(images/top-menu-icon.png)
+}
+
+.horizontalTopMenuItemSelected {
+	color:#d8e3ea;
+}
+
+.horizontalTopMenuItem a {
+	color: #FFF;
+	border:0px;
+}
+
+.horizontalTopMenuItem a:hover {
+	color: #fff1e1;
+	list-style-image:url(images/top-menu-icon-over.png);
+}
+
+
+.horizontalTopMenuItem:hover {
+	list-style-image:url(images/top-menu-icon-over.png);
+}
+
+.horizontalTopMenuItemSelected:hover {
+	list-style-image:url(images/top-menu-icon.png);
+}
+
+
+
+/* This defines the overall rounded box that surrounds the main content area
+    of the site */
+
+#contentArea {
+	margin: 8px 0px 0px 0px;
+	padding: 0px;
+	color: #000;
+	width:100%;
+	height:100%;
+	background:#d8e3ea;
+	background-repeat: no-repeat;	
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-width:1px;
+	border-color:#b5bdc5;
+	border-style:solid;
+	-webkit-box-shadow: 5px 5px 5px #ccc;
+	-moz-box-shadow: 5px 5px 5px #ccc; 
+	box-shadow: 5px 5px 5px #ccc; 
+}
+
+/* For the front page of the site the screen is split into 
+   various pods on the top and bottom. For other pages on the site 
+   we use this much simpler layout with a less intense color range*/
+.singlePodExpanding {
+    padding: 20px;
+	margin: 0px;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d3e0e8));
+	background-image: -moz-linear-gradient(top,#ffffff,#d3e0e8);
+	/* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#d3e0e8);
+    /* IE 8 */
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#d3e0e8);	
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Improve the contrast on the document pages by using this blue rather than Hudson Orange */
+.singlePodExpanding h2,h3 {
+	color:#0e384c;
+}
+
+.singlePodExpanding h4 {
+	padding:8px 0px 2px 0px;
+	text-align:left;
+	font-size:11pt;
+	color:#0e384c;
+}
+
+.singlePodExpanding li {
+    font-size:11pt;
+	color:#0e384c;
+	padding:0;
+}
+
+/* Used to add Hudson logo onto singlepod layouts */ 
+#hudsonStamp {
+    position:relative;
+	z-index:2;
+	float:right;
+	margin-top:-0px;
+	margin-right:-5px;
+	padding:0px 0px 10px 10px;
+ }
+ 
+ 
+/* Not used right now but this will position the stamp from the bottom of the singlepod if needed */
+#hudsonStampFromBottom {
+    position:relative;
+	z-index:2;
+	float:right;
+	margin-top:-550px;
+	margin-right:-5px;
+	padding:10px 0px 10px 0px;
+ }	
+ 
+#versionControl {
+    position:relative;
+    float:right;
+    text-align:right;
+	font-size:9pt;
+    color:#0e384c;
+	margin-top:-10px;
+ }
+
+.topContent {
+	float:left;
+	height: 350px;
+	padding: 10px 0px 0px 0px;
+	margin: 0px;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d3e0e8));	
+	background-image: -moz-linear-gradient(top,#ffffff,#d3e0e8);
+	/* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#d3e0e8);
+    /* IE 8 */
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#d3e0e8);
+}
+
+.topContent a:hover {
+	border:none;
+}
+
+.topContentDesc {
+   padding: 20px 20px 0px 20px;
+   font-size:14pt;
+   height:50px;
+}
+
+
+.topLeftPod {
+	width: 220px;
+	border-right: 1px;
+	border-right-color: #457596;
+	border-right-style:solid;
+	border-radius: 10px 0px 0px 0px;
+	-moz-border-radius: 10px 0px 0px 0px;
+	-khtml-border-radius: 10px 0px 0px 0px;
+	-webkit-border-radius: 10px 0px 0px 0px;
+	text-align: center;
+}
+
+.topCenterPod{
+	width: 220px;
+	border-right: 1px;
+	border-right-color: #457596;
+	border-right-style:solid;
+	text-align: center;	
+}
+
+.topRightPod {
+	width:337px;
+	border-radius: 0px 10px 0px 0px;
+	-moz-border-radius: 0px 10px 0px 0px;
+	-khtml-border-radius:  0px 10px 0px 0px;
+	-webkit-border-radius: 0px 10px 0px 0px;
+	border-bottom-style:none;	
+}
+
+
+/* used to scroll the news when it's too long */
+.scrollableArea {
+	overflow:auto;
+	max-height:329px;
+	border-style:none;
+}
+
+.topRightPod p {
+	padding-left:18px;
+	text-align:justify;
+	width:290px;
+	margin:0px;
+}
+
+.topRightPod h3 {
+	border-bottom: 1px;
+	border-bottom-color:#457596;
+	border-bottom-style:solid;
+	padding:0px 0px 2px 6px;
+	margin: 0px;
+}
+
+.topRightPod h4 {
+	padding:8px 0px 2px 18px;
+	text-align:left;
+	width:290px;
+	font-size:11pt;
+}
+
+.newsTextLinks a:link {
+	color:#000;
+	border-bottom-style:dotted;
+	border-bottom-width:1px;
+}
+
+.newsTextLinks a:hover, a:active, a:focus { 
+	border-bottom:solid;
+	border-bottom-width:1px;
+} 
+
+.undecoratedLinks a:link {
+	border-bottom:none;
+}
+
+.undecoratedLinks a:hover, a:active, a:focus { 
+	border-bottom:none;
+}
+
+
+.firstNewsItem {
+    margin:0px;	
+	padding:0px 0px 2px 6px;
+}
+	
+.subsequentNewsItem {
+	border-top: 1px;
+	border-top-color:#dcdeea;
+	border-top-style:solid;
+	padding:6x 0px 0px 6px;
+	margin:16px 0px 0px 0px;	
+}
+
+.newsItemSubHeadFirst {
+	padding:6x 0px 0px 6px;
+	margin:6px 0px 0px 0px;	
+	font-style:italic;
+	font-weight:bold;
+	font-size:13px;
+}
+
+.newsItemSubHeadSub {
+	border-top: 1px;
+	border-top-color:#dcdeea;
+	border-top-style:dotted;
+	padding:6x 0px 0px 6px;
+	margin:6px 0px 0px 0px;	
+	font-style:italic;
+	font-weight:bold;
+	font-size:13px;
+}
+
+.podButtonArea {
+	min-height:180px;
+	vertical-align:middle;	
+}
+
+.meetHudson img {
+	margin-top:35px;
+}
+	
+.hudsonWatermark {
+	background-image:url(images/hudson-bust-greyed.png);
+	background-repeat:no-repeat;
+	background-position:bottom center;
+	color:transparent;
+}	
+	
+.podButtonArea a {
+     border-bottom:none;	
+}
+
+.hudsonWatermark img {
+	 margin-top:100px;	
+}
+
+
+#centerBar {
+	clear:both;
+	height:28px;
+	margin:0px;
+	padding: 8px 0px 5px 10px;
+	border-top-color:#457596;
+	border-bottom-color:#457596;
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d8e3ea), to(#5382a1));
+	background-image: -moz-linear-gradient(top,#d8e3ea,#5382a1);
+	/* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d8e3ea, endColorstr=#5382a1);
+    /* IE 8 */
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d8e3ea, endColorstr=#5382a1);	
+	vertical-align:middle;
+	z-index:2;
+	position:relative;
+}
+
+#centerBar h3 {
+	padding: 0px 10px 0px 10px;
+	margin: 0px;
+	display:inline;
+}
+
+#centerBar p {
+	width: 200px;
+	margin:0px;
+	padding:0px;
+	display:inline;
+}
+
+
+#centerBar a {
+	font-size:13pt;
+}
+
+#centerBar a:hover, a:active, a:focus { 
+	border-bottom:dotted;
+	border-bottom-width:1px;
+} 
+
+#dukeAward {
+    position:relative;
+	z-index:2;
+	float:right;
+	margin-top:-305px;
+	margin-right:2px;
+ }
+ 
+#dukeAward a {
+	   color:#0e384c;
+	   border-bottom:none;	
+} 
+
+#dukeAward img {
+	height:80px;
+}
+
+.bottomContent {
+	float:left;
+	height: 256px;
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d8e3ea), to(#5382a1));
+	background-image: -moz-linear-gradient(top,#d8e3ea,#5382a1);
+	/* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d8e3ea, endColorstr=#5382a1);
+    /* IE 8 */
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d8e3ea, endColorstr=#5382a1);	
+}
+
+.bottomLeftPod {
+	width: 220px;
+	border-right: 1px;
+	border-right-color: #457596;
+	border-right-style:solid;
+	border-radius: 0px 0px 0px 10px;
+	-moz-border-radius: 0px 0px 0px 10px;
+	-khtml-border-radius: 0px 0px 0px 10px;
+	-webkit-border-radius: 0px 0px 0px 10px;
+}
+
+.bottomLeftPod H4 {
+	padding:0px 20px 0px 20px;
+}
+
+.bottomLeftPod p {
+	font-size:10pt;
+	padding:0px 20px 0px 20px;
+}
+
+.bottomCenterPod {
+	width: 220px;
+	border-right: 1px;
+	border-right-color: #457596;
+	border-right-style:solid;
+}
+
+.bottomCenterPod h5 {
+   padding: 16px 0px 0px 10px;
+   margin:0px;
+}
+
+.bottomCenterPod p {
+   padding: 16px 10px 0px 10px;
+   margin:0px;
+}
+
+.supportDetail {
+	font-size:10pt;
+}
+
+.bottomContent h3 {
+	border-bottom: 1px;
+	border-bottom-color: #457596;
+	border-bottom-style:solid;
+	padding:4px 10px 4px 10px;
+	margin: 0px;
+}
+
+.bottomRightPod {
+	width:337px;
+    border-radius: 0px 0px 10px 0px;
+	-moz-border-radius: 0px 0px 10px 0px;
+	-khtml-border-radius: 0px 0px 10px 0px;
+	-webkit-border-radius: 0px 0px 10px 0px;
+}
+
+.bottomRightPod h3 {
+	border-bottom: 1px;
+	border-bottom-color: #457596;
+	border-bottom-style:solid;
+	padding:4px 10px 4px 10px;
+}
+
+.bottomRightPod h4 {
+	padding:2px 0px 2px 18px;
+	width:290px;
+	margin:0px;
+	font-size:11pt;
+}
+
+.bottomRightPod p {
+	padding-left:18px;
+	text-align:justify;
+	width:290px;
+	margin:0px;
+}
+
+/* Used to highlight text such as the version number */ 
+.popText {
+	color:#ff3600;
+}
+
+/* Styling for the Operating System package list. 
+   Bullets are provided by the specific named classes for each OS */
+#osList {
+	font-size:11pt;
+	list-style-position:inside;
+	margin:0px;
+	padding:10px 0px 0px 10px;
+}
+
+/* Defines the vertical gap between each OS choice */
+#osList li {
+	margin: 8px 0px 8px 0px;
+}
+
+/* Styles that provide the bullet icons for the download list
+   images here must be 16x16*/
+
+#osUbuntu {
+	list-style-image:url(images/os-ubuntu.png);
+}
+
+#osRedhat {
+	list-style-image:url(images/os-redhat.png);
+}
+
+#osOEL {
+	list-style-image:url(images/os-redhat.png);
+}
+
+#osSuse {
+	list-style-image: url(images/os-suse.png);
+}
+
+#osSolaris {
+	list-style-image: url(images/os-solaris.png);
+}
+
+#osBSD {
+	list-style-image:  url(images/os-free-bsd.png)
+}
+
+#osOEL {
+	list-style-image:  url(images/os-linux.png)
+}
+
+/* Styling for the PoweredBy section */ 
+#poweredByHudson {
+	clear:both;
+	padding: 0px 0px 0px 20px;
+	margin:0px;
+	height:80px;
+	background:#5382a1;
+	background-repeat: no-repeat;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-width:1px;
+	border-color:#b5bdc5;
+	border-style:solid;
+	-webkit-box-shadow: 5px 5px 5px #ccc;
+	-moz-box-shadow: 5px 5px 5px #ccc; 
+	box-shadow: 5px 5px 5px #ccc;
+}
+
+#poweredByHudson h3 {
+    float:left;
+	vertical-align:middle;
+	text-align:right;
+	color:#ff3600;
+}
+
+#poweredByHudson p {
+    float:left;
+	vertical-align:middle;
+}
+#poweredByHudson img {
+    height:40px;
+	vertical-align:middle;
+}
+
+
+/* Styling for the footer area - feedback links etc and Oracle logo */
+#footer {
+	text-align:right;
+	vertical-align:middle;
+	font-size:9pt;
+    color:#0e384c;	
+	margin-top: 10px;
+	clear:both;
+}
+
+#footerLinks {
+	float:left;
+	list-style:none;
+	width:500px;
+	padding: 0px;
+	margin: 0px;	
+	text-align:left
+}
+
+#footerLinks a {
+	   color:#0e384c;
+	   border-bottom:none;	
+}
+
+.footerLinksItem {
+	float:left;
+	margin-left: 16px;
+	padding-left: 16px;
+    border-left-width: 1px;
+	border-left-style:  solid;
+	border-color: #0e384c;
+	}
+
+/* we only need the separator bar between items so we use this separate 
+   class on the first so that it does not exhibit that border */
+.footerLinksItemFirst {
+	float:left;
+}
+
+#content .content UL.image LI {
+  list-style: none !important;
+}
+
+UL.image {
+  list-style: none;
+  padding-left: 1em;
+  margin-left: 1em;
+}
+UL.image LI {
+  padding-left: 22px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-bottom: 0.5em;
+}
+
+/* Used by the changelog */
+UL.image LI.rfe {
+  background-image: url(images/rfe.gif);
+}
+UL.image LI.rfe.major {
+  background-image: url(images/rfe.gif);
+}
+UL.image LI.bug {
+  background-image: url(images/bug.gif);
+}
+UL.image LI.bug.major {
+  background-image: url(images/bug.gif);
+}
+
+/* That's all folks - thanks for reading */

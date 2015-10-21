@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hudson Process Proposal</title>
+<link href="../hudson.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+</head>
+<body>
+<div class="containerExpanding">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="../docs/index.html">Documentation</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Source+code">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Home">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://issues.hudson-ci.org">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://java.net/projects/hudson/lists">Mailing Lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://hudson-ci.org">Home</a></li>
+      </ul>
+      <!-- end .horizonalMenu --> 
+    </div>
+    <div id="tagline" class="undecoratedLinks"> <a href="http://hudson-ci.org"><img src="../images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></a> </div>
+    <!-- end .header --> 
+  </div>
+  <div id="contentArea">
+    <div class="singlePodExpanding newsTextLinks"> 
+      <!-- This logo positioned by CSS-->
+      <div id="hudsonStamp"><img src="../images/hudson-bust.png" alt="Hudson Logo"/></div>
+<h2> Hudson Process Discussion Summary </h2>      
+<p>Over the past month my team and I have been working with some other members of the Hudson community to get resolution on some issues different members had.  Oracle and some of our partners/customer's primary concern was around the licenses associated with some of the core technologies, and the lack of process w.r.t. software development, feature information/auditing, infrastructure decisions, etc.  Cloudbees (Sacha Labourey &amp; KK) and Andrew Bayer had issues around Oracle's ownership of the Hudson trademark.  Below is my summary of those talks and some of the outcomes.  I tried to keep this as brief as possible while attempting to leave nothing unclear, but there is a lot to cover.</p>
+<p/>
+<p>Let's start with the process concerns.  We have been discussing these issues with Andrew, Cloudbees, Dean Yu and Romain Seguy.  <a href="Hudson_Process_v0.4.html">This proposal</a> outlines what came from those discussions.  While there are some other issues we still need to work through, I think this represents the things we were in most agreement on and things many of us believed would help the Hudson developer and user communities.  We would like to collect some additional feedback and plan on how to roll out some of this process in the next month or two.  We believe it will add clarity, equality and openness to the community.  With regards to the licensing of the core components, we talked about adding hook points to the core to allow some of the current technology to be substituted with different technology options.  This would allow the community to address some of the Hudson core licensing concerns, and would also allow users to have the flexibility to use more standard technologies with the Hudson core.</p>
+<p/>
+<p>The second topic we covered was around the naming rights of Hudson.  I think there has been a lot of confusion around this topic so I would like to first try and clarify some of that here by listing some facts:</p>
+<ul>
+<li>Oracle has not changed anything with the Hudson community since the Sun acquisition.  There is still an SCA/OCA to sign to contribute, and Oracle has made no claim against anyone using the Hudson trademark.  The only time this topic even came up in conversation is when I pointed out that if anyone was to fork Hudson they would have to call it something else.  That is no different than any other fork of any other piece of open source software.</li>
+
+<li> We are talking about naming rights, not the software.  If Oracle decided tomorrow to forbid everybody from using the name Hudson (which we would never do), users could continue to use the code as long as they like.  This topic only affects people or companies using the name Hudson in products, marketing material, etc.  It does not directly affect the code. This license has no affect on users or companies making changes to Hudson source code who don't provide a public Hudson offering.
+</li>
+<li>My team provides tools and frameworks to help people build software.  We do not charge for them, including Hudson.  We do not intend to sell a version of Hudson.  We do sell support for Hudson that can be purchased just like any other product we ship to customers.  Sun did this as well and we are continuing that practice. </li>
+
+<li>Owning the trademark allows us to ensure stability and consistency to Hudson users.  We want to ensure that when the name Hudson is used publicly in regards to continuous integration, we are all talking about the same thing.  So a plugin writer who writes a plugin can be assured that it runs in all versions of the software calling itself Hudson.  And customers who are using a set of plugins with one version of Hudson could decide to move to a different vendor's version of Hudson and know that their plugins will work as they did before.  Having multiple public versions of things called Hudson that plugins may or may not work with would lead to a lot of confusion and frustration.  The goal is to prevent that. </li>
+</ul>
+<p>
+So with that in mind, here is a <a href="HudsonTM-License-v1.pdf" target="_new">link to the naming proposal we have come up with</a>.  After reviewing about a dozen examples of how to do this, what we came up with is pretty simple.  In a nutshell the proposal is, if you take a copy of the hudson-ci.war file from hudson-ci.org and don't modify it, you can add as many extensions and plugins as you like and package it all up and  call it Hudson something (or a variant).  If you write a plugin that works with the unmodified hudson-ci.war file you can publically call your plugin a Hudson plugin. The extensions and plugins that you write don't need to be contributed back to the community if you or your company decides you want to try to make money off of them.  The reason we stayed away from the source code itself is that would introduce the need for a TCK to certify implementations.  We thought that was too heavy-weight in this situation.  Companies or users could also request specific trademark licenses for cases with changes to the Hudson core.  We would just want to make sure those changes didn't cause plugin compatibility issues.  This proposal is pretty straightforward and ensures that everything calling itself Hudson is the same to the end users and plugin writers.</p>  
+<p/>
+<p>
+Finally, I want to make two comments on Cloudbees &amp; Andrew's proposal for a "re-branding" of Hudson.  First, I don't believe there is any such thing as re-branding a community while part of that community still exists.  We are talking about a fork, so IMO we should call it what it is.  The only difference is whether or not you take the assets like mailing list and source repository away from the Hudson community when you start the fork.  Secondly, the proposal is based on leaving Hudson how it has been, but only with regards to who gets to make the decisions and who controls it.  The same proposal wants to change Hudson from how it has always been by dropping the OCA requirement and having us give up the naming rights.  To me, that sounds like a contradiction and an unfair deal for Oracle.</p> <p/>
+<p>
+As many of you have pointed out, there can be a fork at any time.  If Oracle ever did anything that the community disagreed with, whether it was enforcing new rights on the Hudson name, or trying to muscle the community, the community could always fork at that point in time.  That is one of the assurances against a corporation doing things like that.</p>  <p/>
+<p>
+Regardless of what happens with the fork/no-fork decision, Winston and the rest of my team along with many of our partners, customers and other members of the current Hudson community will continue to work on, support and improve Hudson for years to come.  There are many ways to run an open source project.  I think in order for Hudson to grow and reach more people the core community needs to grow and become more open and equal.  I can appreciate that some people want to keep things the same as they have been up until now, with a very small group of people making all of the final decisions on things.  That is their choice and they have the right to fork and do that. </p>
+<p/>
+<p>
+<p>I concede that my initial posting could have been handled better.  I don't believe it was a indication of lack of understanding about OSS as much as it was that I was doing too many things at once and had tried to reach out to individuals beforehand without reply.  I would really like to put all of the politics and drama behind us and focus on building software.  That's what my team and I love to do.</p></p>
+ <p>Ted Farrell - Jan 2011</p>     
+    </div>
+  </div>
+  <div id="footer">
+    <ul id="footerLinks">
+      <li class="footerLinksItemFirst"><a href="http://java-net.dev.java.net/feedback.html">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="../images/oracle-logo.gif" alt="Site Sponsored by Oracle"/> 
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

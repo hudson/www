@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- InstanceBegin template="/Templates/hudson-ci-site-template-singlecolumn.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Hudson Proposal to Transfer to Eclipse - FAQ</title>
+<!-- InstanceEndEditable -->
+<link href="../hudson.css" rel="stylesheet" type="text/css">
+<meta name="Keywords" content="hudson,hudson-ci,continuous integration,software">
+<meta name="Description" content="Hudson is an extensible Continuous Integration Server">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-21731024-1']);
+ _gaq.push(['_setDomainName', '.hudson-ci.org']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script> 
+</head>
+
+<body>
+<div class="containerExpanding">
+  <div id="header">
+    <div id="topMenu">
+      <ul>
+        <li class="horizontalTopMenuItem"><a href="index.html">Documentation</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Source+code">Source</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://wiki.hudson-ci.org/display/HUDSON/Home">Wiki</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://issues.hudson-ci.org">Bugs</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://java.net/projects/hudson/lists">Mailing Lists</a></li>
+        <li class="horizontalTopMenuItem"><a href="http://hudson-ci.org">Home</a></li>
+      </ul>
+      <!-- end .topMenu --> 
+    </div>
+    <div id="tagline" class="undecoratedLinks"> <a href="http://hudson-ci.org"><img src="../images/logo.png" alt="Hudson - Extensible continuous Integration Server"/></a> </div>
+    <!-- end .header --> </div>
+  <div class="singlePodExpanding newsTextLinks"> 
+    <!-- This logo positioned by CSS-->
+    <div id="hudsonStamp"><img src="../images/hudson-bust.png" alt="Hudson Logo"/><!-- InstanceBeginEditable name="rightLegend" --><!-- InstanceEndEditable --> </div>
+    <h1>
+	<!-- InstanceBeginEditable name="pageTitle" -->Hudson & Eclipse - FAQ<br>
+      <!-- InstanceEndEditable --></h1>
+	<!-- InstanceBeginEditable name="pageContent" -->
+    <h2>Introduction</h2>
+    <p>This FAQ answers some of the questions you may have in relation to the <a href="http://www.eclipse.org/proposals/technology.hudson">proposed transfer</a> of the Hudson project to the Eclipse Foundation.</p>
+	<h2>Proposal FAQ</h2>
+	<p class="newsItemSubHeadFirst">What is happening?</p>
+<p>Oracle has submitted a proposal to the Eclipse Foundation to create a Hudson project in Eclipse and contribute all of the Hudson core code and IP to that project.</p>
+<p class="newsItemSubHeadSub">What is Oracle's ongoing investment in Hudson?</p>
+<p>Oracle remains fully committed to the Hudson project and will continue to invest in the project both in terms of leading the project at Eclipse and continuing to staff full-time employees in the areas of development, QA, documentation and product management.</p>  
+<p class="newsItemSubHeadSub">Does Oracle still view Hudson important for their customers?</p>  
+<p>Absolutely. As application software development evolves to become ever more complex, the core tasks of managing the development processes around it can quickly exceed the capacity of manual systems. We believe that a continuous integration solution such as Hudson is key to all enterprise development efforts, including, but not restricted to, those undertaken by Oracle itself and its customer base.</p>
+<p class="newsItemSubHeadSub">Will Oracle have commercial products or support for Hudson?</p>
+<p>Oracle intends to offer commercial support for Hudson.</p>
+<p class="newsItemSubHeadSub">What happens to the Hudson trademark?</p>
+<p>The Hudson trademark will be transferred to the Eclipse Foundation.</p>
+<p class="newsItemSubHeadSub">Who owns the IP?</p>
+<p>The IP for the Hudson project will be licensed under the Eclipse Public License (EPL).  In addition, Oracle will transfer ownership of the trademark and appropriate namespace to the Eclipse Foundation. The project will be covered by the standard <a href="http://www.eclipse.org/org/#IP Management" target="_blank">Eclipse IP Management rules</a> [http://www.eclipse.org/org/#IP Management].</p>
+<p class="newsItemSubHeadSub">The license for Hudson is being changed to EPL.  What are the implications for Hudson plugin developers?</p>
+<p>This contribution to the Eclipse Foundation consists purely of the Hudson core. It does not imply that all Hudson plugins will have to transfer to Eclipse as well. Plugin writers will still be free to host their code with the main Husdon project or elsewhere and still be published in the Husdon update center. Hudson plugins that are currently hosted on the existing repositories will be automatically transferred into the Eclipse Infrastructure provided that:
+<ol>
+<li type="i">
+The plug-in project lead has no objections, or the plug-in has no current active lead</li>
+<li type="i">
+The plug-in has no explicit license of its own or if it does have a license the project lead is willing to re-license to EPL.</li>
+</ol>
+</p>
+<p class="newsItemSubHeadSub"><a name="howlong"></a>How long will this all take?</p>
+<p>Contributing a code base as big and complex as Hudson involves a lot of work to check out the IP and ensure that the code is clean and of high quality. Fortunately this has already been a major focus of the Hudson team for the last few months and many of the problems are understood (see the <a href="http://www.eclipse.org/proposals/technology.hudson/" target="_blank">Eclipse proposal</a>, legal issues section). Of course it's hard to predict with any certainty but we anticipate the issues should be resolved within a couple of months.</p>
+<p class="newsItemSubHeadSub">Who else is supporting and participating in the Hudson community?</p>
+<p>Oracle will be leading the project along with an initial pool of contributors from Sonatype, Tasktop, and VMware. IBM and Intuit are also listed as project supporters. </p>
+<p class="newsItemSubHeadSub">Why now?  Why not do it to avoid the Jenkins split?</p>
+<p>Moving Hudson to Eclipse, or even to an Eclipse-like structure was proposed to the core Hudson community before the fork.  At that time, it was deemed as “too heavyweight”.  In evaluating our options post-fork, we still were lead back to the Eclipse submission as the best course of action for the continued success of the Hudson project. </p>
+<p class="newsItemSubHeadSub">Why is Oracle making this change to move this project to the Eclipse Foundation and why is it good for the Hudson community.</p>
+<p>Oracle has been looking for ways to improve the insight, predictability and openness of the Hudson project and we believe having it part of the Eclipse community was the best way to achieve that.</p>
+    <!-- InstanceEndEditable --> 
+    <!-- end .singlePodExpanding --></div>
+  <div id="footer">
+    <ul id="footerLinks">
+      <li class="footerLinksItemFirst"><a href="http://java-net.dev.java.net/feedback.html">Feedback</a></li>
+      <li class="footerLinksItem"><a href="http://www.java.net/javanet-web-site-terms-use">Terms of Use</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/privacy/index.html">Privacy</a></li>
+      <li class="footerLinksItem"><a href="http://www.oracle.com/us/legal/terms/index.html">Legal</a></li>
+    </ul>
+    <img src="../images/oracle-logo.gif" alt="Site Sponsored by Oracle"/> 
+    <!-- end .footer --></div>
+  <!-- end .containerExpanding --></div>
+</body>
+<!-- InstanceEnd --></html>
